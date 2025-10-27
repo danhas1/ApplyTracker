@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApplyTracker</title>
+  <!-- Basic styling for the popup window -->
+  <style>
+    body {
+      width: 280px;
+      font-family: sans-serif;
+      padding: 10px;
+    }
+    h1 {
+      color: #0078D7;
+      font-size: 18px;
+      text-align: center;
+    }
+    button {
+      background-color: #0078D7;
+      color: white;
+      border: none;
+      padding: 8px;
+      margin-top: 10px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    li {
+      background: #f3f3f3;
+      padding: 6px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+      font-size: 12px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <h1>ApplyTracker</h1>
+  <!-- Button to save the current tab as a job entry -->
+  <button id="saveButton">Add current page</button>
+
+  <h3>Saved jobs:</h3>
+  <!-- List of saved jobs will appear here -->
+  <ul id="jobList"></ul>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
