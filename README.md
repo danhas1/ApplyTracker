@@ -24,3 +24,11 @@ Each time you visit a job page, you can add it to your personal list with one cl
 1. Download or clone this repository:
    ```bash
    git clone https://github.com/danhason/applytracker.git
+
+   ## Screenshots
+
+### Popup window
+![Popup view](popup_view.png)
+
+### Saved jobs list
+![Saved jobs list](saved_jobs.png)
