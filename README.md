@@ -23,7 +23,7 @@ Each time you visit a job page, you can add it to your personal list with one cl
 ## Installation
 1. Download or clone this repository:
    ```bash
-   git clone https://github.com/danhason/applytracker.git
+   git clone https://github.com/danhas1/applytracker.git
 
 2.	Open Chrome and go to:
     chrome://extensions/
