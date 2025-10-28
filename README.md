@@ -27,6 +27,8 @@ Each time you visit a job page, you can add it to your personal list with one cl
 
    ## Screenshots
 
+## Screenshots
+
 ### Popup window
 ![Popup view](popup_view.png)
 
