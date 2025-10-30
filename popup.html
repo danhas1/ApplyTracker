@@ -1,53 +1,166 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>ApplyTracker</title>
-  <!-- Basic styling for the popup window -->
   <style>
     body {
-      width: 280px;
-      font-family: sans-serif;
-      padding: 10px;
-    }
-    h1 {
-      color: #0078D7;
-      font-size: 18px;
-      text-align: center;
-    }
-    button {
-      background-color: #0078D7;
-      color: white;
-      border: none;
-      padding: 8px;
-      margin-top: 10px;
-      width: 100%;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    ul {
-      list-style-type: none;
+      width: 320px;
+      background-color: #F8FAFC;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
       padding: 0;
-      margin-top: 10px;
     }
-    li {
-      background: #f3f3f3;
+
+    /* Header */
+    header {
+      background-color: #005A9E;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    /* Stats bar */
+    #statsBar {
+      background-color: #eef3f8;
+      color: #333;
+      font-size: 12px;
+      text-align: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #d0d0d0;
+    }
+
+    /* Add button */
+    #saveButton {
+      background-color: #e0e0e0;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 12px;
+      width: calc(100% - 24px);
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s, box-shadow 0.2s;
+    }
+
+    #saveButton:hover {
+      background-color: #d5d5d5;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Search input */
+    #searchInput {
+      width: 90%;
       padding: 6px;
       border-radius: 4px;
-      margin-bottom: 4px;
+      border: 1px solid #ccc;
       font-size: 12px;
-      word-break: break-all;
+      margin: 0 auto 10px auto;
+      display: block;
+    }
+
+    /* Job list */
+    #jobList {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 12px 12px 12px;
+    }
+
+    /* Each job card */
+    .job-card {
+      background-color: white;
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .job-title {
+      font-weight: bold;
+      color: #333;
+      font-size: 13px;
+    }
+
+    .job-info {
+      font-size: 11px;
+      color: #666;
+      margin-top: 3px;
+    }
+
+    /* Buttons */
+    .btn-container {
+      margin-top: 8px;
+    }
+
+    .status-btn {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-right: 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .status-btn:hover {
+      background-color: #1976d2;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .delete-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>ApplyTracker</h1>
-  <!-- Button to save the current tab as a job entry -->
-  <button id="saveButton">Add current page</button>
+  <header>ApplyTracker</header>
 
-  <h3>Saved jobs:</h3>
-  <!-- List of saved jobs will appear here -->
+  <!-- Stats bar -->
+  <div id="statsBar">
+    Total: <span id="totalCount">0</span> |
+    Active: <span id="activeCount">0</span> |
+    Rejected: <span id="rejectedCount">0</span>
+  </div>
+
+  <!-- Main button -->
+  <button id="saveButton">Add Current Page</button>
+
+  <!-- Search box -->
+  <input type="text" id="searchInput" placeholder="Search jobs..." />
+
+  <!-- Job list -->
   <ul id="jobList"></ul>
 
-  <script type="module" src="popup.js"></script>
+  <!-- Empty list message -->
+  <p class="empty-message" id="emptyMsg" style="display:none;">
+    No saved jobs yet.<br>Click "Add Current Page" to start tracking.
+  </p>
+
+  <script src="popup.js"></script>
 </body>
 </html>
