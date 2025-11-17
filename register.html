@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Register - ApplyTracker</title>
+  <style>
+    body {
+      width: 320px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #F8FAFC;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 { text-align: center; color: #005A9E; }
+    input {
+      width: 100%; padding: 8px; margin: 8px 0;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    button {
+      width: 100%; padding: 10px; background-color: #005A9E;
+      color: white; border: none; border-radius: 4px;
+      font-weight: bold; cursor: pointer;
+    }
+    button:hover { background-color: #00457A; }
+    p { text-align: center; font-size: 12px; }
+    a { color: #005A9E; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h2>Register</h2>
+  <input type="text" id="name" placeholder="Full Name" />
+  <input type="email" id="email" placeholder="Email" />
+  <input type="password" id="password" placeholder="Password" />
+  <button id="registerBtn">Register</button>
+  <p>Already have an account? <a href="login.html">Login</a></p>
+
+  <script src="shared.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>
